@@ -14,23 +14,23 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 chat = client.chats.create(model="gemini-2.0-flash")
 
 
-with open("Bot Gerador de História\data\Instrucoes.md", "r", encoding="utf-8") as f:
+with open("Bot_Gerador_de_História\data\Instrucoes.md", "r", encoding="utf-8") as f:
     instrucoes = f.read()
 
-with open("Bot Gerador de História\data\LivroJogador.md", "r", encoding="utf-8") as f:
+with open("Bot_Gerador_de_História\data\LivroJogador.md", "r", encoding="utf-8") as f:
     livroJogador = f.read()
 
 
-with open("Bot Gerador de História\data\LivroMestre.md", "r", encoding="utf-8") as f:
+with open("Bot_Gerador_de_História\data\LivroMestre.md", "r", encoding="utf-8") as f:
     mestre1 = f.read()
 
-with open("Bot Gerador de História\data\LivroMestre2.md", "r", encoding="utf-8") as f:
+with open("Bot_Gerador_de_História\data\LivroMestre2.md", "r", encoding="utf-8") as f:
     mestre2 = f.read()
 
-with open("Bot Gerador de História\data\LivroMestre3.md", "r", encoding="utf-8") as f:
+with open("Bot_Gerador_de_História\data\LivroMestre3.md", "r", encoding="utf-8") as f:
     mestre3 = f.read()
 
-with open("Bot Gerador de História\data\LivroMestre4.md", "r", encoding="utf-8") as f:
+with open("Bot_Gerador_de_História\data\LivroMestre4.md", "r", encoding="utf-8") as f:
     mestre4 = f.read()    
 
 
@@ -42,6 +42,8 @@ def extrair_json_de_markdown(texto_ia):
         return json.loads(json_str)
     else:
         raise ValueError("JSON não encontrado na resposta da IA.")
+    
+
 
 
 def criarHistoria(descrição):
@@ -53,12 +55,7 @@ def criarHistoria(descrição):
      print(campanhaDtoJson)
      api_client.criarCampanha(campanhaDtoJson)
     
-    #A API salva o enredo
 
-prompt ='''uma campanha que se passa numa época de transição entre o medieval, tecnologia e magia. estilo steampunk, com bastante ênfase na magia e tecnologia, mas sem deixar os elementos medievais de lado.
-crie coisas como cidades flutuantes movidas a magia ou energia arcana, novos meios de locomoção como bondinhos e os primeiros trens, armas, e arquitetura, mas também crie cidades que parecem vilarejos antigos 
-medievais. use o máximo de raças possíveis, crie um ambiente e população bem vivo e diverso. o sistema será o DnD 5e. nível máximo será 14.
-'''
 
-criarHistoria(prompt)
+
 
